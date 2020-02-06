@@ -1,0 +1,727 @@
+// card
+.card {
+    position: relative;
+    width: calc(100% - 10px);
+    border-radius: 5px;
+    background-color: #fff;
+    border: $border1;
+    margin: 5px;
+    overflow: hidden;
+    &:hover {
+        @include animate_1();
+        box-shadow: 0 0 30px 0 rgba(154,161,171,.34);
+    }
+    &.no-hover {
+        &:hover {
+            box-shadow: 0 0 0 0;
+        }
+    }
+    &.mobile-minimum {
+        @media (max-width: $max-width) {
+            min-width: 1200px;
+        }
+    }
+    &.no-margin {
+        margin: 0 0;
+    }
+    .card-top {
+        position: relative;
+        // width: calc(100% - 30px);
+        // padding: 14px 15px;
+    }
+    .card-pad {
+        position: relative;
+        width: calc(100% - 30px);
+        padding: 15px;
+    }
+    .card-mid {
+        position: relative;
+        width: calc(100% - 30px);
+        height: 170px;
+        padding: 15px;
+    }
+    .card-center {
+        @include post_center(relative);
+    }
+    .card-left {
+        @include post_middle(absolute);
+    }
+}
+
+.card-percentage {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    border-radius: 100%;
+    &.border-25 {
+        border-top: 4px $green solid;
+        border-right: 4px #fff solid;
+        border-bottom: 4px #fff solid;
+        border-left: 4px #fff solid;
+    }
+    &.border-50 {
+        border-top: 4px $green solid;
+        border-right: 4px $green solid;
+        border-bottom: 4px #fff solid;
+        border-left: 4px #fff solid;
+    }
+    &.border-75 {
+        border-top: 4px $green solid;
+        border-right: 4px $green solid;
+        border-bottom: 4px $green solid;
+        border-left: 4px #fff solid;
+    }
+    &.border-100 {
+        border: 4px $green solid;
+    }
+    .percentage-info {
+        @include  post_center(relative);
+        text-align: center;
+    }
+    .percentage-title {
+        font-size: 18pt;
+        font-weight: 600;
+        color: $txt-84-color;
+        line-height: 1.2;
+    }
+    .percentage-subtitle {
+        font-size: 11pt;
+        color: $txt-54-color;
+        line-height: 1.2;
+    }
+}
+
+.card-notif {
+    position: relative;
+    width: calc(100% - 30px);
+    padding: 15px;
+    @include grid_2x(50px, 1fr);
+    &:hover {
+        @include animate_1();
+        background-color: #f5f5f5;
+        color: $txt-min-color;
+    }
+    .c-n-col-1 {
+        @include column_n(1);
+    }
+    .c-n-col-2 {
+        @include column_n(2);
+    }
+}
+
+.card-item {
+    position: relative;
+    width: calc(100% - 30px);
+    padding: 15px;
+    @include grid_3x(50px, 1fr, 150px);
+    &:hover {
+        @include animate_1();
+        background-color: #f9f9f9;
+        color: $txt-min-color;
+    }
+    .c-i-col-1 {
+        @include column_n(1);
+    }
+    .c-i-col-2 {
+        @include column_n(2);
+    }
+    .c-i-col-3 {
+        @include column_n(3);
+        text-align: right;
+    }
+}
+
+.card-timeline {
+    position: relative;
+    width: calc(100% - 0px);
+    padding: 15px 0;
+    @include grid_2x(60px, 1fr);
+    .c-n-col-1 {
+        @include column_n(1);
+    }
+    .c-n-col-2 {
+        @include column_n(2);
+    }
+}
+
+
+.table-head {
+    position: relative;
+    width: calc(100% - 30px);
+    padding: 15px;
+    color: $txt-84-color;
+    @include grid_2x(1fr, 1fr);
+    .float-right {
+        float: right;
+        text-align: right;
+    }
+    .form-control {
+        border: $border;
+        height: 43px;
+        padding: 0 10px;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+}
+
+.table-foot {
+    position: relative;
+    width: calc(100% - 30px);
+    padding: 15px;
+    color: $txt-84-color;
+    @include grid_2x(1fr, 1fr);
+    .pull-right {
+        float: right;
+        text-align: right;
+    }
+}
+
+.table {
+    position: relative;
+    width: calc(100% - 30px);
+    padding: 15px;
+    margin: 15px;
+    border-radius: 7.5px;
+    overflow: hidden;
+    background-color: #fff;
+    
+    box-shadow: 0 0 10px 0 rgba(154,161,171,.15);
+    
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    &:hover {
+        @include animate_1();
+        box-shadow: 0 0 30px 0 rgba(154,161,171,.15);
+    }
+
+    thead {
+        width: 100%;
+        background-color: $blue;
+        tr {
+            th {
+                padding: 15px;
+                font-size: 11pt;
+                color: #fff;
+                text-align: left;
+                flex-basis: 100%;
+                flex-grow: 2;
+                .sortable {
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    tbody {
+        position: relative;
+        width: 100%;
+        .tr {
+            .td {
+                flex-basis: 100%;
+                flex-grow: 2;
+            }
+        }
+    }
+
+    tfoot {
+        padding: 10px 0;
+    }
+
+    td {
+        padding: 15px;
+        font-size: 11pt;
+        vertical-align: middle;
+    }
+    tr {
+        color: $txt-54-color;
+    }
+    tr:nth-child(even) {
+        background-color: #f5f5f5;
+    }   
+
+}
+
+.pagination {
+    .page-item {
+        list-style: none;
+        display: inline-block;
+        font-size: 11pt;
+        &.disabled {
+            .page-link {
+                cursor: not-allowed;
+                color: $txt-84-color;
+                background-color: #f5f5f5;
+            }
+        }
+        .page-link {
+            padding: 10px;
+            height: 40px;
+            border: $border;
+            border-radius: 5px;
+            margin: 0 5px;
+            color: $txt-54-color;
+            background-color: #fff;
+            &:hover {
+                background-color: #f5f5f5;
+            }
+        }
+    }
+}
+
+.link {
+    cursor: default;
+    &.link-green {
+        li {
+            a {
+                &:hover {
+                    background-color: $green;
+                    color: #fff;
+                }
+                &.active {
+                    background-color: $green;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    &.link-orange {
+        li {
+            a {
+                &:hover {
+                    background-color: $orange;
+                    color: #fff;
+                }
+                &.active {
+                    background-color: $orange;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    &.link-red {
+        li {
+            a {
+                &:hover {
+                    background-color: $red;
+                    color: #fff;
+                }
+                &.active {
+                    background-color: $red;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    &.link-pos {
+        li {
+            a {
+                &:hover {
+                    background-color: $pos-color;
+                    color: #fff;
+                }
+                &.active {
+                    background-color: $pos-color;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    li {
+        list-style: none;
+        display: inline-block;
+        a {
+            position: relative;
+            // padding: 7.5px 15px;
+            display: block;
+            width: 35px;
+            height: 35px;
+            line-height: 38px;
+            text-align: center;
+            font-size: 10pt;
+            border-radius: 5px;
+            background-color: #fff;
+            color: $txt-84-color;
+            border: $border;
+            box-shadow: 0 0 5px 0 rgba(154,161,171,.15);
+        }
+        .val {
+            padding: 0 15px;
+            color: $txt-54-color;
+            font-size: 11pt;
+        }
+    }
+}
+
+.card-date-picker {
+    position: relative;
+    width: 100%;
+    min-width: 100%;
+    .input {
+        position: relative;
+        width: 100%;
+        .ip {
+            position: relative;
+            width: calc(100% - 30px);
+            padding: 12px 15px;
+            background-color: #fff;
+            color: $txt-84-color;
+            font-size: 13px;
+            font-weight: 500;
+            // &:focus {
+            //     color: $red;
+            // }
+            // &:focus + .place-date-picker {
+            //     display: block;
+            // }
+        }
+        .cl {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 43px;
+            height: 43px;
+            line-height: 43px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #fff;
+            color: $txt-54-color;
+            font-size: 13px;
+            display: none;
+            &:hover {
+                color: $txt-84-color;
+            }
+        }
+        &:hover {
+            .cl {
+                display: block;
+            }
+        }
+    }
+    .place-date-picker {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        border: 1px rgba(0,0,0,0.1) solid;
+        width: 100px;
+        height: 100px;
+        background-color: #fff;
+        display: none;
+    }
+    .double {
+        position: relative;
+        height: 40px;
+        border: 1px rgba(0,0,0,0.1) solid;
+        background-color: #fff;
+        border-radius: 5px;
+        overflow: hidden;
+        display: flex;
+    }
+    .content {
+        position: absolute;
+        top: 40px;
+        width: 100%;
+        min-width: 320px;
+        z-index: 1000;
+        border: 1px rgba(0,0,0,0.1) solid;
+        box-shadow: $shadow;
+        background-color: #fff;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        box-shadow: $shadow;
+        display: none;
+        &.right {
+            right: 0 !important;
+        }
+        &.content-popup-center {
+            @include post_center(fixed);
+        }
+        &.active {
+            display: block;
+        }
+        .m-input-moment {
+            width: calc(100% - 30px) !important;
+            border: 0 solid #000;
+        }
+        .rdrCalendarWrapper {
+            position: relative;
+            width: calc(100%);
+            top: -15px;
+            .rdrMonthAndYearWrapper {
+                padding: 0 0;
+            }
+            .rdrMonthAndYearPickers {
+                width: 100% !important;
+            }
+            .rdrMonth {
+                padding: 0 0;
+                width: 100% !important;
+            }
+        }
+    }
+}
+
+.card-time-picker {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.card-form {
+    position: relative;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px rgba(0,0,0,0.1) solid;
+    .cf-header {
+        position: relative;
+        width: calc(100% - 30px);
+        padding: 15px;
+    }
+    .cf-body {
+        position: relative;
+        width: calc(100% - 30px);
+        padding: 0 15px;
+        // background-color: #f8f8f8;
+    }
+    .cf-footer {
+        position: relative;
+        width: calc(100% - 30px);
+        padding: 15px;
+    }
+    .cf-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: $txt-84-color;
+    }
+    .cf-subtitle {
+        font-size: 13px;
+        font-weight: 500;
+        color: $txt-54-color;
+        margin-top: 5px;
+    }
+    .cf-field {
+        position: relative;
+        width: 100%;
+        margin: 15px 0;
+        .cf-label {
+            font-size: 15px;
+            color: $txt-84-color;
+        }
+        .cf-important {
+            color: $red;
+            font-size: 13px;
+            margin-left: 5px;
+        }
+        .cf-input {
+            margin: 2.5px 0;
+        }
+        .cf-message {
+            font-size: 13px;
+            color: $txt-34-color;
+        }
+    }
+}
+
+.card-org {
+    position: relative;
+    border: $border1;
+    border-radius: 5px;
+    margin: auto;
+    background-color: #fff;
+    .co-top {
+        position: relative;
+        width: calc(100% - 30px);
+        padding: 10px 15px;
+        &.co-grid {
+            @include grid_2x(45px, 1fr);
+            @include grid_gap(10px);
+            text-align: left;
+            .co-col-1 {
+                @include column_n(1);
+                text-align: center;
+            }
+            .co-col-2 {
+                @include column_n(2);
+            }
+        }
+    }
+    .co-bot {
+        position: relative;
+        width: calc(100% - 30px);
+        padding: 5px 15px;
+        border-top: $border1;
+    }
+}
+
+.card-flipping {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    perspective: 1000px;
+    
+    .card-body {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        -webkit-transform-style: preserve-3d;
+           -moz-transform-style: preserve-3d;
+            -ms-transform-style: preserve-3d;
+             -o-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+        -webkit-transition: all .7s linear;
+           -moz-transition: all .7s linear;
+            -ms-transition: all .7s linear;
+             -o-transition: all .7s linear;
+                transition: all .7s linear;
+        .card-side {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 5px;
+            background-color: #fff;
+            // backsface-visibility: hidden;
+            box-shadow: $shadow;
+        }
+        .card-content {
+            position: relative;
+            width: 100%;
+        }
+        .side-front {
+            z-index: 2;
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 1s ease-in, visibility .75s linear;
+            &[class^=col-xs]:first-of-type {
+              padding-left: 0;
+            }
+        }
+        .side-back {
+            z-index: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1s ease-in, visibility .75s linear;
+            -webkit-transform: rotateY(180deg);
+               -moz-transform: rotateY(180deg);
+                -ms-transform: rotateY(180deg);
+                 -o-transform: rotateY(180deg);
+                    transform: rotateY(180deg);
+        }
+    }
+    &.active-hover {
+        &:hover {
+            .card-body {
+                -webkit-transform: rotateY(180deg);
+                   -moz-transform: rotateY(180deg);
+                    -ms-transform: rotateY(180deg);
+                     -o-transform: rotateY(180deg);
+                        transform: rotateY(180deg);
+                .side-front {
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: opacity 1s ease-in, visibility .75s linear;
+                }
+            }
+        }
+    }
+    &.active {
+        .card-body {
+            -webkit-transform: rotateY(180deg);
+               -moz-transform: rotateY(180deg);
+                -ms-transform: rotateY(180deg);
+                 -o-transform: rotateY(180deg);
+                    transform: rotateY(180deg);
+            .side-front {
+                z-index: 0;
+                opacity: 0;
+                visibility: hidden;
+            }
+            .side-back {
+                z-index: 2;
+                opacity: 1;
+                visibility: visible;
+                transition: opacity 1s ease-in, visibility .75s linear;
+            }
+        }
+    }
+}
+
+.card-do {
+    position: relative;
+    width: 100%;
+    @include grid_3x(50px, 1fr, 100px);
+    @include grid_gap(15px);
+    .col-1 {
+        @include column_n(1);
+    }
+    .col-2 {
+        @include column_n(2);
+    }
+    .col-3 {
+        @include column_n(3);
+    }
+}
+
+
+.bubble {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 100%;
+
+    font-size: 13px;
+    font-weight: 600;
+    &.red {
+        background-color: $red;
+        color: #fff;
+    }
+    &.green {
+        background-color: $green;
+        color: #fff;
+    }
+    &.orange {
+        background-color: $orange;
+        color: #fff;
+    }
+    &.pos {
+        background-color: $pos-color;
+        color: #fff;
+    }
+    &.top-right {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    &.top-left {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &.top-right-fadding {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+    }
+    &.top-left-fadding {
+        position: absolute;
+        top: -10px;
+        left: -10px;
+    }
+
+    // position
+    @for $i from 0 through 100 {
+        @for $j from 0 through 100 {
+            &.position-#{$i}-#{$j} {
+                position: absolute;
+                top: 0% + $i;
+                left: 0% + $j;
+            }
+        }
+    }
+}

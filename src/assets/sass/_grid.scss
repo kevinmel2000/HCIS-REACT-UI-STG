@@ -1,0 +1,347 @@
+@mixin grid_5x($col1, $col2, $col3, $col4, $col5) {
+	display: grid !important;
+	display: -ms-grid !important;
+
+	grid-template-columns: $col1 $col2 $col3 $col4 $col5 !important;
+	-ms-grid-columns: $col1 $col2 $col3 $col4 $col5 !important;
+}
+@mixin grid_4x($col1, $col2, $col3, $col4) {
+	display: grid !important;
+	display: -ms-grid !important;
+
+	grid-template-columns: $col1 $col2 $col3 $col4 !important;
+	-ms-grid-columns: $col1 $col2 $col3 $col4 !important;
+}
+@mixin grid_3x($col1, $col2, $col3) {
+	display: grid !important;
+	display: -ms-grid !important;
+
+	grid-template-columns: $col1 $col2 $col3 !important;
+	-ms-grid-columns: $col1 $col2 $col3 !important;
+}
+@mixin grid_2x($col1, $col2) {
+	display: grid !important;
+	display: -ms-grid !important;
+
+	grid-template-columns: $col1 $col2 !important;
+	-ms-grid-columns: $col1 $col2 !important;
+}
+@mixin grid_1x($col1) {
+	display: grid !important;
+	display: -ms-grid !important;
+
+	grid-template-columns: $col1 !important;
+	-ms-grid-columns: $col1 !important;
+}
+@mixin grid_none() {
+	display: block !important;
+}
+@mixin column_n($n) {
+	grid-column: $n;
+	-ms-grid-column: $n;
+}
+@mixin column_1() {
+	grid-column: 1;
+	-ms-grid-column: 1;
+}
+@mixin column_2() {
+	grid-column: 2;
+	-ms-grid-column: 2;
+}
+@mixin column_3() {
+	grid-column: 3;
+	-ms-grid-column: 3;
+}
+@mixin grid_gap($n) {
+	grid-gap: $n;
+	-ms-grid-gap: $n;
+}
+
+.grid {
+	position: relative;
+	width: 100%;
+	&.grid-8x {
+		display: grid !important;
+		display: -ms-grid !important;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr !important;
+		-ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr !important; 
+	}
+	&.grid-7x {
+		display: grid !important;
+		display: -ms-grid !important;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr !important;
+		-ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr !important; 
+	}
+	&.grid-6x {
+		display: grid !important;
+		display: -ms-grid !important;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr !important;
+		-ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr !important; 
+	}
+	&.grid-5x {
+		@include grid_5x(1fr, 1fr, 1fr, 1fr, 1fr);
+	}
+	&.grid-4x {
+		@include grid_4x(1fr, 1fr, 1fr, 1fr);
+	}
+	&.grid-3x {
+		@include grid_3x(1fr, 1fr, 1fr);
+	}
+	&.grid-3x-col7 {
+		@include grid_3x(250px, 1fr, 1fr);
+	}
+	&.grid-2x {
+		@include grid_2x(1fr, 1fr);
+	}
+	&.grid-2x-col8 {
+		@include grid_2x(150px, 1fr);
+		.content-fixed-left {
+			position: fixed;
+			width: 100%;
+			width: 150px;
+			@media (max-width: $max-width) {
+				position: relative;
+				right: 0;
+				width: 100%;
+			}
+		}
+		.content-fixed-right {
+			position: fixed;
+			right: 10px;
+			width: 100%;
+			@media (max-width: $max-width) {
+				position: relative;
+				right: 0;
+				width: 100%;
+			}
+		}
+	}
+	&.grid-2x-col7 {
+		@include grid_2x(250px, 1fr);
+		.content-fixed-left {
+			position: fixed;
+			width: 100%;
+			width: 250px;
+			@media (max-width: $max-width) {
+				position: relative;
+				right: 0;
+				width: 100%;
+			}
+		}
+		.content-fixed-right {
+			position: fixed;
+			right: 10px;
+			width: 100%;
+			@media (max-width: $max-width) {
+				position: relative;
+				right: 0;
+				width: 100%;
+			}
+		}
+	}
+	&.grid-2x-col6 {
+		@include grid_2x(350px, 1fr);
+		.content-fixed-left {
+			position: fixed;
+			width: 100%;
+			width: 350px;
+			@media (max-width: $max-width) {
+				position: relative;
+				right: 0;
+				width: 100%;
+			}
+		}
+		.content-fixed-right {
+			position: fixed;
+			right: 10px;
+			width: 100%;
+			@media (max-width: $max-width) {
+				position: relative;
+				right: 0;
+				width: 100%;
+			}
+		}
+	}
+
+	&.grid-2x-col5 {
+		@include grid_2x(400px, 1fr);
+		.content-fixed-left {
+			position: fixed;
+			width: 100%;
+			width: 400px;
+			@media (max-width: $max-width) {
+				position: relative;
+				right: 0;
+				width: 100%;
+			}
+		}
+		.content-fixed-right {
+			position: fixed;
+			right: 10px;
+			width: 100%;
+			@media (max-width: $max-width) {
+				position: relative;
+				right: 0;
+				width: 100%;
+			}
+		}
+	}
+
+
+	&.grid-2x-col45 {
+		@include grid_2x(45px, 1fr);
+	}
+	&.grid-2x-colmin9 {
+		@include grid_2x(1fr, 80px);
+	}
+	&.grid-2x-colmin8 {
+		@include grid_2x(1fr, 150px);
+		.content-fixed-left {
+			position: fixed;
+			width: 100%;
+			@media (max-width: $max-width) {
+				position: relative;
+				right: 0;
+				width: 100%;
+			}
+		}
+		.content-fixed-right {
+			position: fixed;
+			right: 10px;
+			width: 150px;
+			@media (max-width: $max-width) {
+				position: relative;
+				right: 0;
+				width: 100%;
+			}
+		}
+	}
+	&.grid-2x-colmin7 {
+		@include grid_2x(1fr, 250px);
+		.content-fixed-left {
+			position: fixed;
+			width: 100%;
+			@media (max-width: $max-width) {
+				position: relative;
+				right: 0;
+				width: 100%;
+			}
+		}
+		.content-fixed-right {
+			position: fixed;
+			right: 10px;
+			width: 250px;
+			@media (max-width: $max-width) {
+				position: relative;
+				right: 0;
+				width: 100%;
+			}
+		}
+	}
+	&.grid-2x-colmin6 {
+		@include grid_2x(1fr, 350px);
+		.content-fixed-left {
+			position: fixed;
+			width: 100%;
+			@media (max-width: $max-width) {
+				position: relative;
+				right: 0;
+				width: 100%;
+			}
+		}
+		.content-fixed-right {
+			position: fixed;
+			right: 10px;
+			width: 350px;
+			@media (max-width: $max-width) {
+				position: relative;
+				right: 0;
+				width: 100%;
+			}
+		}
+	}
+	&.grid-2x-colmin5 {
+		@include grid_2x(1fr, 400px);
+		.content-fixed-left {
+			position: fixed;
+			width: 100%;
+			@media (max-width: $max-width) {
+				position: relative;
+				right: 0;
+				width: 100%;
+			}
+		}
+		.content-fixed-right {
+			position: fixed;
+			right: 10px;
+			width: 400px;
+			@media (max-width: $max-width) {
+				position: relative;
+				right: 0;
+				width: 100%;
+			}
+		}
+	}
+	&.grid-2x-colmin45 {
+		@include grid_2x(1fr, 45px);
+	}
+	&.gap-5px {
+		@include grid_gap(5px);
+	}
+	&.gap-10px {
+		@include grid_gap(10px);
+	}
+	&.gap-15px {
+		@include grid_gap(15px);
+	}
+	&.gap-20px {
+		@include grid_gap(20px);
+	}
+	&.gap-25px {
+		@include grid_gap(25px);
+	}
+	&.gap-30px {
+		@include grid_gap(30px);
+	}
+	&.grid-mobile-none {
+		@media (max-width: $max-width) {
+			@include grid_none();
+		}
+	}
+	.column-1 {
+		position: relative;
+		width: 100%;
+		@include column_n(1);
+	}
+	.column-2 {
+		position: relative;
+		width: 100%;
+		@include column_n(2);
+	}
+	.column-3 {
+		position: relative;
+		width: 100%;
+		@include column_n(3);
+	}
+	.column-4 {
+		position: relative;
+		width: 100%;
+		@include column_n(4);
+	}
+	.column-5 {
+		position: relative;
+		width: 100%;
+		@include column_n(5);
+	}
+	
+}
+
+.content-left {
+	text-align: left;
+}
+.content-center {
+	text-align: center;
+}
+.content-right {
+	text-align: right;
+}

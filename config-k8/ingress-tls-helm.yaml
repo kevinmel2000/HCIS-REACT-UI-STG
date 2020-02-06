@@ -1,0 +1,168 @@
+{
+  "kind": "Ingress",
+  "apiVersion": "extensions/v1beta1",
+  "metadata": {
+    "name": "api-ingress",
+    "namespace": "ingress-nginx",
+    "selfLink": "/apis/extensions/v1beta1/namespaces/ingress-nginx/ingresses/api-ingress",
+    "uid": "85a655e9-b435-11e9-863a-d6e5c33f5cb5",
+    "resourceVersion": "6438705",
+    "generation": 44,
+    "creationTimestamp": "2019-08-01T08:22:38Z",
+    "annotations": {
+      "certmanager.k8s.io/cluster-issuer": "letsencrypt-staging",
+      "kubernetes.io/ingress.class": "nginx",
+      "nginx.ingress.kubernetes.io/enable-cors": "true",
+      "nginx.ingress.kubernetes.io/proxy-buffer-size": "16K",
+      "nginx.ingress.kubernetes.io/rewrite-target": "/$2",
+      "nginx.ingress.kubernetes.io/ssl-redirect": "false"
+    }
+  },
+  "spec": {
+    "tls": [
+      {
+        "hosts": [
+          "epx.eksadpro.io"
+        ],
+        "secretName": "letsencrypt-staging"
+      }
+    ],
+    "rules": [
+      {
+        "host": "epx.eksadpro.io",
+        "https": {
+          "paths": [
+            {
+              "path": "/",
+              "backend": {
+                "serviceName": "maintenance",
+                "servicePort": 80
+              }
+            },
+            {
+              "path": "/cnbqry(/|$)(.*)",
+              "backend": {
+                "serviceName": "cnbqry",
+                "servicePort": 60010
+              }
+            },
+            {
+              "path": "/cnbcmd(/|$)(.*)",
+              "backend": {
+                "serviceName": "cnbcmd",
+                "servicePort": 60009
+              }
+            },
+            {
+              "path": "/masterdata(/|$)(.*)",
+              "backend": {
+                "serviceName": "masterdata",
+                "servicePort": 60001
+              }
+            },
+            {
+              "path": "/bizpar(/|$)(.*)",
+              "backend": {
+                "serviceName": "bizpar",
+                "servicePort": 60004
+              }
+            },
+            {
+              "path": "/idp(/|$)(.*)",
+              "backend": {
+                "serviceName": "idp",
+                "servicePort": 60029
+              }
+            },
+            {
+              "path": "/report(/|$)(.*)",
+              "backend": {
+                "serviceName": "report",
+                "servicePort": 60003
+              }
+            },
+            {
+              "path": "/bpm(/|$)(.*)",
+              "backend": {
+                "serviceName": "bpm",
+                "servicePort": 10000
+              }
+            },
+            {
+              "path": "/es(/|$)(.*)",
+              "backend": {
+                "serviceName": "es",
+                "servicePort": 60002
+              }
+            },
+            {
+              "path": "/emcmd(/|$)(.*)",
+              "backend": {
+                "serviceName": "emcmd",
+                "servicePort": 60005
+              }
+            },
+            {
+              "path": "/emqry(/|$)(.*)",
+              "backend": {
+                "serviceName": "emqry",
+                "servicePort": 60006
+              }
+            },
+            {
+              "path": "/recruitmentcmd(/|$)(.*)",
+              "backend": {
+                "serviceName": "recruitmentcmd",
+                "servicePort": 60013
+              }
+            },
+            {
+              "path": "/recruitmentqry(/|$)(.*)",
+              "backend": {
+                "serviceName": "recruitmentqry",
+                "servicePort": 60014
+              }
+            },
+            {
+              "path": "/tmcmd(/|$)(.*)",
+              "backend": {
+                "serviceName": "tmcmd",
+                "servicePort": 60007
+              }
+            },
+            {
+              "path": "/tmqry(/|$)(.*)",
+              "backend": {
+                "serviceName": "tmqry",
+                "servicePort": 60008
+              }
+            },
+            {
+              "path": "/performancecmd(/|$)(.*)",
+              "backend": {
+                "serviceName": "performancecmd",
+                "servicePort": 60011
+              }
+            },
+            {
+              "path": "/performanceqry(/|$)(.*)",
+              "backend": {
+                "serviceName": "performanceqry",
+                "servicePort": 60012
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "status": {
+    "loadBalancer": {
+      "ingress": [
+        {
+          "ip": "139.59.219.27"
+        }
+      ]
+    }
+  }
+}

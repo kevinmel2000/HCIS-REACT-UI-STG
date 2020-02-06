@@ -1,0 +1,263 @@
+// .tree {
+// 	ul {
+// 		position: relative;
+// 		padding: 20px 0;
+// 		text-align: center;
+// 		@include animate_1();
+// 		li {
+// 			position: relative;
+// 			display: inline-block;
+// 			vertical-align: top;
+// 			text-align: center;
+// 			list-style-type: none;
+// 			padding: 20px 5px 0 5px;
+// 			@include animate_1();
+// 			&::before, &::after {
+// 				position: absolute;
+// 				content: '';
+// 				top: 0; 
+// 				right: calc(50% - 1px);
+// 				border-top: 1px #ccc solid;
+// 				width: 50%; 
+// 				height: 20px;
+// 			}
+// 			&::after {
+// 				right: auto;
+// 				left: calc(50% - 1px);
+// 				border-left: 1px #ccc solid;
+// 			}
+// 			&:only-child::after, &:only-child::before {
+// 				display: none;
+// 			}
+// 			&:only-child {
+// 				padding-top: 0;
+// 			}
+// 			&:first-child::before, &:last-child::after {
+// 				border: 0 none;
+// 			}
+// 			&:last-child::before {
+// 				border-right: 1px #ccc solid;
+// 				border-radius: 0 5px 0 0;
+// 			}
+// 			&:first-child::after {
+// 				border-radius: 5px 0 0 0;
+// 			}
+// 			.tree-card {
+// 				position: relative;
+// 				max-width: calc(150px - 4px);
+// 				border: 1px #ccc solid;
+// 				// padding: 10px 15px;
+// 				text-decoration: none;
+// 				color: #666;
+// 				font-size: 11pt;
+// 				display: inline-block;
+// 				border-radius: 10px;
+// 				white-space: normal;
+// 				@include animate_1();
+// 				// &:hover + .tree-child {
+// 				// 	display: block;
+// 				// }
+// 			}
+// 		}
+// 		ul {
+// 			&::before {
+// 				position: absolute;
+// 				content: '';
+// 				top: 0;
+// 				left: calc(50% - 1px);
+// 				border-left: 1px #ccc solid;
+// 				width: 0;
+// 				height: 20px;
+// 			}
+// 		}
+// 	}
+// 	&.hidden {
+// 		ul {
+// 			li {
+// 				label {
+// 					cursor: pointer;
+// 					.tree-card {
+// 						&:hover {
+// 							background-color: #f5f5f5;
+// 							box-shadow: $shadow-line;
+// 						}
+// 					}
+// 				}
+// 			}
+// 			.tree-button {
+// 				display: none;
+// 				&:checked + ul {
+// 					display: block;
+// 				}
+// 			}
+// 			ul {
+// 				display: none;
+// 				@include animate_1();
+// 			}
+// 		}
+// 	}
+// }
+
+// .place-tree {
+// 	position: fixed;
+// 	top: 0;
+// 	left: 0;
+// 	width: 100%;
+// 	height: 100vh;
+// 	// display: flex;
+// 	z-index: 1000;
+// 	background-color: #fff;
+// 	.p-t-close {
+// 		position: absolute;
+// 		top: 15px;
+// 		right: 15px;
+// 	}
+// 	.p-t-top {
+// 		position: relative;
+// 		width: calc(100% - 30px);
+// 		padding: 5px 15px;
+// 	}
+// 	.tree {
+// 		position: relative;
+// 		width: 100%;
+// 		height: calc(100vh - 55px);
+// 		white-space: nowrap;
+// 		overflow: auto;
+// 	}
+// }
+
+.tree {
+	position: relative;
+	width: max-content;
+	min-width: 100%;
+	overflow: scroll;
+	@include transparantScrollBar();
+	ul {
+		position: relative;
+		padding: 20px 0;
+		text-align: center;
+		@include animate_1();
+		li {
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+			text-align: center;
+			list-style-type: none;
+			padding: 20px 5px 0 5px;
+			@include animate_1();
+			&::before, &::after {
+				position: absolute;
+				content: '';
+				top: 0; 
+				right: calc(50% - 1px);
+				border-top: 1px #ccc solid;
+				width: 50%; 
+				height: 20px;
+			}
+			&::after {
+				right: auto;
+				left: calc(50% - 1px);
+				border-left: 1px #ccc solid;
+			}
+			&:only-child::after, &:only-child::before {
+				display: none;
+			}
+			&:only-child {
+				padding-top: 0;
+			}
+			&:first-child::before, &:last-child::after {
+				border: 0 none;
+			}
+			&:last-child::before {
+				border-right: 1px #ccc solid;
+				border-radius: 0 5px 0 0;
+			}
+			&:first-child::after {
+				border-radius: 5px 0 0 0;
+			}
+			.tree-card {
+				position: relative;
+				max-width: calc(150px - 4px);
+				border: 1px #ccc solid;
+				// padding: 10px 15px;
+				text-decoration: none;
+				color: #666;
+				font-size: 11pt;
+				display: inline-block;
+				border-radius: 10px;
+				white-space: normal;
+				@include animate_1();
+				// &:hover + .tree-child {
+				// 	display: block;
+				// }
+			}
+			.tree-button {
+				display: none;
+			}
+		}
+		ul {
+			&::before {
+				position: absolute;
+				content: '';
+				top: 0;
+				left: calc(50% - 1px);
+				border-left: 1px #ccc solid;
+				width: 0;
+				height: 20px;
+			}
+		}
+	}
+	&.hidden {
+		ul {
+			li {
+				label {
+					max-width: 250px;
+					cursor: pointer;
+					display: block;
+					margin: 0 auto;
+					&:hover {
+						// background-color: #f9f9f9;
+						box-shadow: $shadow;
+					}
+				}
+			}
+			.tree-button {
+				&:checked + ul {
+					display: block;
+				}
+			}
+			ul {
+				display: none;
+				@include animate_1();
+			}
+		}
+	}
+}
+
+.place-tree {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	// display: flex;
+	z-index: 1000;
+	background-color: #fff;
+	.p-t-close {
+		position: absolute;
+		top: 15px;
+		right: 15px;
+	}
+	.p-t-top {
+		position: relative;
+		width: calc(100% - 30px);
+		padding: 5px 15px;
+	}
+	.tree {
+		position: relative;
+		width: 100%;
+		height: calc(100vh - 55px);
+		white-space: nowrap;
+		overflow: auto;
+	}
+}

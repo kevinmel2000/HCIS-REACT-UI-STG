@@ -1,0 +1,64 @@
+// app login
+.app-login {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 1200;
+	overflow-y: auto;
+	@include transparantScrollBar();
+	.login-content {
+		@include post_center(relative);
+		width: 900px;
+		background-color: #fff;
+		border-radius: 5px;
+		// border: $border1;
+		overflow: hidden;
+		@media (max-width: $max-width) {
+			@include post_none();
+			width: calc(100% - 60px);
+			padding: 15px;
+			margin: auto;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+	}
+	.login-small {
+		@include post_center(relative);
+		width: 350px;
+		padding: 20px;
+		background-color: #fff;
+		border-radius: 5px;
+		// border: $border1;
+		@media (max-width: $max-width) {
+			@include post_none();
+			margin: auto;
+			margin-top: 70px;
+			margin-bottom: 20px;
+		}
+		@media (max-width: $min-width) {
+			@include post_none();
+			width: calc(100% - 60px);
+		}
+	}
+	.logo-faded {
+		position: relative;
+		width: 100%;
+		height: 30px;
+		.image {
+			@include post_bottom(absolute);
+			width: 100px;
+			height: 100px;
+		}
+	}
+}
+
+.app-popup-bottom {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	width: 1000px;
+	height: 500px;
+	z-index: 2000;
+}

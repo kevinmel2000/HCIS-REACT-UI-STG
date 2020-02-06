@@ -1,0 +1,217 @@
+//text
+.txt-site {
+	&.txt-line {
+		line-height: 20px;
+	}
+	&.txt-big {
+		font-size: 44px;
+	}
+	&.txt-small {
+		font-size: 34px;
+	}
+	&.txt-micro {
+		font-size: 28px;
+	}
+	&.txt-standar {
+		font-size: 24px;
+	}
+	&.txt-title {
+		font-size: 20px;
+		line-height: 20px;
+	}
+	&.txt-subtitle {
+		font-size: 18px;
+		line-height: 20px;
+	}
+	&.txt-shadow {
+		text-shadow: 0 0 5px rgba(0,0,0,0.34);
+	}
+	&.txt-description {
+		font-size: 13px;
+		line-height: 20px;
+	}
+	&.txt-8 {
+		font-size: 10px;
+	}
+	&.txt-9 {
+		font-size: 11px;
+	}
+	&.txt-10 {
+		font-size: 12px;
+	}
+	&.txt-11 {
+		font-size: 13px;
+	}
+	&.txt-12 {
+		font-size: 14px;
+	}
+	&.txt-13 {
+		font-size: 15px;
+	}
+	&.txt-14 {
+		font-size: 16px;
+	}
+	&.txt-15 {
+		font-size: 17px;
+	}
+	&.txt-16 {
+		font-size: 18px;
+	}
+	&.txt-17 {
+		font-size: 19px;
+	}
+	&.txt-18 {
+		font-size: 20px;
+	}
+	&.txt-19 {
+		font-size: 21px;
+	}
+	&.txt-20 {
+		font-size: 22px;
+	}
+	&.txt-init {
+		color: $min-color;
+		a {
+			color: $min-color;
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	a {
+		text-decoration: none;
+		&.txt-main {
+			color: $txt-84-color;
+			&:hover {
+				color: $min-color;
+			}
+		}
+	}
+	&.txt-main {
+		color: $txt-84-color;
+		a {
+			text-decoration: none;
+			color: $txt-84-color;
+			&:hover {
+				color: $min-color;
+			}
+		}
+	}
+	a {
+		text-decoration: none;
+		&.txt-primary {
+			color: $min-color;
+			&:hover {
+				color: $txt-84-color;
+			}
+		}
+	}
+	&.txt-primary {
+		color: $txt-54-color;
+		a {
+			color: $txt-54-color;
+			text-decoration: none;
+			&:hover {
+				color: $txt-84-color;
+			}
+		}
+	}
+	&.txt-main-hover {
+		&:hover {
+			color: $min-color;
+		}
+	}
+	&.txt-white {
+		color: #fff;
+	}
+	&.txt-danger {
+		color: $err-color;
+	}
+	&.txt-safe {
+		color: $pos-color;
+	}
+	&.txt-white {
+		color: #fff;
+	}
+	&.txt-green {
+		color: $green;
+	}
+	&.txt-purple {
+		color: $purple;
+	}
+	&.txt-blue {
+		color: $blue;
+	}
+	&.txt-red {
+		color: $red;
+	}
+	&.txt-magenta {
+		color: $magenta;
+	}
+	&.txt-yellow {
+		color: $yellow;
+	}
+	&.txt-orange {
+		color: $orange;
+	}
+	&.txt-bold {
+		font-weight: 500;
+		font-family: "FontFirstBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
+	&.txt-extra-bold {
+		font-weight: 500;
+		font-family: "FontFirstExtraBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
+	&.txt-thin {
+		font-weight: 500;
+		font-family: "FontFirst", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
+	&.txt-font-1 {
+		font-family: "FontFirst", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
+	&.txt-font-2 {
+		font-family: "FontFirst2", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
+	&.txt-font-3 {
+		font-family: "FontFirst3", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
+	&.txt-center {
+		text-align: center;
+	}
+	&.txt-left {
+		text-align: left;
+	}
+	&.txt-right {
+		text-align: right;
+	}
+	&.txt-capital {
+		text-transform: capitalize;
+	}
+	&.txt-capital {
+		text-transform: capitalize;
+	}
+	&.txt-top {
+		@include post_top(relative);
+	}
+	&.txt-middle {
+		@include post_center(relative);
+	}
+	&.txt-upp {
+		text-transform: uppercase;
+	}
+	&.txt-cap {
+		text-transform: capitalize;
+	}
+	&.txt-low {
+		text-transform: lowercase;
+	}
+	&.txt-underline {
+		text-decoration: underline;
+	}
+	&.txt-underline-hover {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

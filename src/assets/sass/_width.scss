@@ -1,0 +1,62 @@
+//column
+//variable
+
+//method
+@mixin col_full() {
+	width: $col-full;
+	margin: 0 auto;
+	@media (max-width: $max-width) {
+		width: calc(100% - 20px);
+	}
+}
+@mixin col_all() {
+	width: calc(100% - 30px);
+	margin: 0 auto;
+}
+@mixin col_set($width) {
+	width: $width;
+	margin: 0 auto;
+	@media (max-width: $max-width) {
+		width: calc(100% - 20px);
+	}
+}
+@mixin col_masonry($val) {
+	column-count: $val;
+	column-gap: 0;
+	-webkit-column-count: $val;
+	-webkit-column-gap: 0;
+	-moz-column-count: $val;
+	-moz-column-gap: 0;
+	-ms-column-count: $val;
+	-ms-column-gap: 0;
+}
+
+//width
+@mixin width($val) {
+	width: $val;
+	// @media (max-width: $max-width) {
+	// 	width: 100%;
+	// }
+}
+
+.width {
+	position: relative;
+	&.width-center {
+		margin: auto;
+	}
+	&.width-middle {
+		@include post_center(absolute);
+	}
+	&.width-full {
+		width: 100%;
+	}
+	&.width-all {
+		width: calc(100% - 30px);
+		padding: 0 15px;
+	}
+	@for $i from 1 through 1000 {
+		&.width-#{$i}px {
+	        @include width(#{$i}px);
+	    }
+	}
+}

@@ -1,0 +1,343 @@
+$mainHeight: 100px;
+
+.chat {
+	position: relative;
+	width: 100%;
+	height: calc(100vh - 130px);
+	background-color: #fff;
+	overflow: hidden;
+	border-radius: 15px;
+	// border: $border;
+	box-shadow: $shadow;
+	@include grid_2x(300px, 1fr);
+	.side {
+		@include  column_n(1);
+		border-right: $border;
+	}
+	.main {
+		@include  column_n(2);
+	}
+	.top {
+		position: relative;
+		width: calc(100% - 30px);
+		padding: 15px;
+		border-bottom: $border;
+		background-color: #fff;
+		// box-shadow: $shadow;
+	}
+	.content {
+		position: relative;
+		width: calc(100% - 30px);
+		padding: 15px;
+	}
+	.status {
+		position: relative;
+		padding: 3px 7.5px;
+		margin: 5px;
+		height: 30px;
+		border-radius: 30px;
+		background-color: rgba($color: $green, $alpha: 0.1);
+		color: $green;
+		font-size: 9pt;
+	}
+	.profile {
+		position: relative;
+		width: calc(100% - 30px);
+		padding: 15px;
+		border-bottom: $border;
+		@include grid_2x(45px, 1fr);
+		@include grid_gap(10px);
+		.col-1 {
+			@include column_n(1);
+		}
+		.col-2 {
+			@include column_n(2);
+		}
+		.name {
+			font-size: 12pt;
+			font-weight: 600;
+			color: $txt-84-color;
+		}
+		&:hover {
+			cursor: pointer;
+			background-color: #f8f8f8;
+		}
+		&.active {
+			position: relative;
+			width: calc(100% - 30px);
+			padding: 15px;
+			background-color: #f8f8f8;
+		}
+	}
+	.list {
+		position: relative;
+		width: 100%;
+		height: calc(100vh - (115px + 130px));
+		overflow-y: auto;
+	}
+	.message {
+		position: relative;
+		width: calc(100% - 30px);
+		padding: 15px;
+		height: calc(100vh - (180px + 130px));
+		overflow-y: auto;
+		background-color: #f8f8f8;
+		&.item-show {
+			height: calc(100vh - 680px) !important;
+		}
+	}
+	.field {
+		position: relative;
+		width: calc(100% - 30px);
+		padding: 15px;
+		min-height: 45px;
+		border-top: $border;
+		background-color: #fff;
+		.f-content {
+			position: relative;
+			width: 100%;
+			@include grid_3x(45px, 1fr, 45px);
+			@include grid_gap(15px);
+			.f-col-1 {
+				@include column_n(1);
+			}
+			.f-col-2 {
+				@include column_n(2);
+			}
+			.f-col-3 {
+				@include column_n(3);
+			}
+		}
+		.choose-item {
+			position: relative;
+			width: 100%;
+			height: 300px;
+			display: none;
+			&.show {
+				display: block;
+			}
+			.c-i-top {
+				position: relative;
+				width: 100%;
+				height: 30px;
+			}
+			.c-i-mid {
+				position: relative;
+				width: 100%;
+				height: 255px;
+				overflow-y: auto;
+			}
+		}
+	}
+	&.zoom {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 1000;
+		border-radius: 0;
+		height: 100vh;
+		@include grid_2x(350px, 1fr);
+		.list {
+			height: calc(100vh - 115px);
+		}
+		.message {
+			height: calc(100vh - 180px);
+			&.item-show {
+				height: calc(100vh - 480px) !important;
+			}
+		}
+	}
+}
+
+.card-select {
+	display: none;
+	&:checked + .card-select-target {
+		box-shadow: 0 0 4px 4px $green;
+	}
+}
+
+.card-select-target {
+	cursor: pointer !important;
+}
+
+
+.card-message {
+    position: relative;
+    width: calc(100% - 30px);
+    margin: 30px 15px;
+    .c-m-content {
+        position: relative;
+        width: calc(100% - 30px);
+        padding: 0 15px;
+        border-radius: 15px;
+        border: $border;
+        .c-m-top {
+            position: relative;
+            width: 100%;
+            padding: 10px 0;
+            text-align: left !important;
+            @include grid_2x(1fr, 80px);
+            .c-m-name {
+                font-size: 12px;
+                font-weight: 600;
+            }
+            .c-m-date {
+                font-size: 12px;
+            }
+        }
+        .c-m-mid {
+            position: relative;
+            width: 100%;
+            padding: 10px 0 10px 0;
+            font-size: 13px;
+            line-height: 20px;
+            color: $txt-84-color;
+            text-align: left !important;
+        }
+    }
+    &.c-m-left {
+        @include grid_2x(40px, 1fr);
+        @include grid_gap(10px);
+        .c-m-col-1 {
+            @include column_n(1);
+        }
+        .c-m-col-2 {
+            @include column_n(2);
+        }
+        .c-m-content {
+            background-color: #fff;
+            .c-m-top {
+            	border-bottom: $border;
+                .c-m-name {
+                    color: $min-color;
+                }
+                .c-m-date {
+                    color: $txt-54-color;
+                }
+            }
+        }
+    }
+    &.c-m-right {
+        .c-m-content {
+            background-color: #fff1e2;
+            // background-color: rgba($color: $green, $alpha: 0.1);
+            .c-m-top {
+            	border-bottom: 1px rgba(0,0,0,0.14) solid !important;
+                .c-m-name {
+                    color: $txt-84-color;
+                }
+                .c-m-date {
+                    color: $txt-54-color;
+                }
+            }
+        }
+    }
+}
+
+// chat popup
+$chatPopupWidth: 350px;
+$chatPopupHeight: 450px;
+
+.chat-popup {
+	position: fixed;
+	width: $chatPopupWidth;
+	height: $chatPopupHeight;
+	bottom: 0;
+	right: 30px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	box-shadow: $shadow;
+	overflow: hidden;
+	z-index: 100;
+
+	.c-p-top {
+		position: relative;
+		width: calc(100% - 20px);
+		height: 35px;
+		padding: 5px 10px;
+		// background-color: $blue;
+		text-align: left;
+		color: #fff;
+	}
+	.c-p-mid {
+		position: relative;
+		width: 100%;
+		height: $chatPopupHeight - 45px;
+		// background-color: #fff;
+		overflow-x: auto;
+	}
+	.c-p-min {
+		position: relative;
+		width: 100%;
+		height: $chatPopupHeight - 90px;
+		// background-color: #fff;
+		overflow-x: auto;
+	}
+	.c-p-bot {
+		position: relative;
+		width: calc(100% - 20px);
+		padding: 5px 10px;
+		@include grid_2x(1fr, 35px);
+	}
+
+	.c-p-list {
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+
+	.c-p-room {
+		position: absolute;
+		width: $chatPopupWidth;
+		height: 100%;
+		top: 0;
+		right: 0 - $chatPopupWidth;
+		box-shadow: $shadow;
+		@include animate_2();
+		&.open {
+			right: 0;
+		}
+	}
+}
+
+.chat-profile {
+		position: relative;
+		width: calc(100% - 20px);
+		padding: 10px;
+		// border-bottom: $border;
+		@include grid_2x(35px, 1fr);
+		@include grid_gap(10px);
+		.col-1 {
+			@include column_n(1);
+		}
+		.col-2 {
+			@include column_n(2);
+		}
+		.c-p-name {
+			font-size: 13px;
+			font-weight: 600;
+			line-height: 20px;
+			color: $txt-84-color;
+			text-align: left !important;
+		}
+		.c-p-status {
+			text-align: left !important;
+		}
+		.c-p-message {
+			font-size: 13px;
+			font-weight: 500;
+			color: $txt-54-color;
+			text-align: left !important;
+		}
+		&:hover {
+			cursor: pointer;
+			background-color: rgba(0,0,0,0.1);
+			@include animate_1();
+		}
+		&.active {
+			position: relative;
+			width: calc(100% - 30px);
+			padding: 15px;
+			background-color: #f8f8f8;
+		}
+	}

@@ -1,0 +1,192 @@
+$dd-height: 40px;
+
+.drop-down-list {
+    position: relative;
+    width: 100%;
+    height: $dd-height;
+    background-color: #fff;
+    &:hover {
+        .ddl-border {
+            border: $border2;
+            cursor: pointer;
+        }
+        .ddl-menu {
+            border-left: $border2;
+            border-right: $border2;
+            border-bottom: $border2;
+        }
+    }
+    &.active {
+        z-index: 10;
+        .ddl-selected {
+            .ddl-icon {
+                .icon {
+                    &:after {
+                        top: 8px;
+                        @include animate_1();
+                        -webkit-transform: rotate(-135deg);
+                           -moz-transform: rotate(-135deg);
+                            -ms-transform: rotate(-135deg);
+                             -o-transform: rotate(-135deg);
+                                transform: rotate(-135deg);
+                    }
+                }
+            }
+        }
+        .ddl-border {
+            border: $border2;
+            cursor: pointer;
+        }
+        .ddl-menu {
+            border-left: $border2;
+            border-right: $border2;
+            border-bottom: $border2;
+            display: block;
+            @include animate_1();
+        }
+    }
+    .ddl-border {
+        border: $border1;
+        border-radius: 5px;
+    }
+    .ddl-selected {
+        position: relative;
+        width: 100%;
+        height: $dd-height;
+        display: flex;
+        .ddl-title {
+            position: relative;
+            width: calc(100% - 30px);
+            padding: 0 15px;
+            .title {
+                @include post_top(absolute);
+                left: 15px;
+                font-size: 13px;
+                font-weight: 600;
+                color: $txt-84-color;
+                text-transform: capitalize;
+            }
+        }
+        .ddl-icon {
+            width: $dd-height;
+            .icon {
+                position: absolute;
+                width: 15px;
+                height: 15px;
+                border-radius: 2px;
+                right: 10px;
+                top: 10px;
+                opacity: 1;
+                &:after {
+                    @include animate_1();
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 3px;
+                    width: 7px;
+                    height: 7px;
+                    border: solid rgba($color: #000, $alpha: 0.7);
+                    border-width: 0 1.5px 1.5px 0;
+                    -webkit-transform: rotate(45deg);
+                       -moz-transform: rotate(45deg);
+                        -ms-transform: rotate(45deg);
+                         -o-transform: rotate(45deg);
+                            transform: rotate(45deg);
+                }
+            }
+        }
+    }
+    .ddl-menu {
+        position: absolute;
+        top: 38px;
+        left: 0;
+        width: calc(100% - 2px);
+        max-height: 200px;
+        overflow-y: auto;
+        border-left: $border1;
+        border-right: $border1;
+        border-bottom: $border1;
+        background-color: #fff;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        display: none;
+        @include transparantScrollBar();
+        ul {
+            position: relative;
+            li {
+                position: relative;
+                list-style: none;
+                input ~ ul > li {
+                    display: none;
+                }
+                input {
+                    display: none;
+                    &:checked ~ ul > li {
+                        display: block;
+                    }
+                    &:checked ~ label {
+                        // background-color: rgba($color: #999, $alpha: 0.14);
+                        background-color: $blue;
+                        .title {
+                            color: #fff;
+                        }
+                        .subtitle {
+                            color: #fff;
+                        }
+                    }
+                }
+                label {
+                    position: relative;
+                    padding: 10px 10px;
+                    cursor: pointer;
+                    display: block;
+                    background-color: #fff;
+                    &:hover {
+                        background-color: rgba($color: #999, $alpha: 0.14);
+                    }
+                    .title {
+                        font-size: 13px;
+                        font-weight: 600;
+                        color: $txt-84-color;
+                    }
+                    .subtitle {
+                        font-size: 12px;
+                        font-weight: 500;
+                        color: $txt-54-color;
+                    }
+                }
+                ul {
+                    position: relative;
+                    margin-left: 20px;
+                    li {
+                        position: relative;
+                        &:before {
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            left: -10px;
+                            width: 7.5px;
+                            height: 20px;
+                            border-left: 1px rgba($color: #000, $alpha: 0.34) solid;
+                            border-bottom: 1px rgba($color: #000, $alpha: 0.34) solid;
+                            z-index: 10;
+                        }
+                        input {
+                            &:checked ~ label {
+                                // background-color: rgba($color: #999, $alpha: 0.14);
+                                background-color: $blue;
+                                .title {
+                                    color: #fff;
+                                }
+                                .subtitle {
+                                    color: #fff;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

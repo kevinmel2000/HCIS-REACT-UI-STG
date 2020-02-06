@@ -1,0 +1,347 @@
+//fonts
+@font-face {
+	font-family: "FontFirst";
+    // src: url("../fonts/Montserrat/Montserrat-Regular.ttf");
+    // src: url("../fonts/Nunito_Sans/NunitoSans-Regular.ttf");
+    // src: url("../fonts/droid-sans/DroidSans.ttf");
+    src: url("../fonts/Ubuntu/Ubuntu-Light.ttf");
+}
+@font-face {
+	font-family: "FontFirstBold";
+    // src: url("../fonts/Montserrat/Montserrat-Bold.ttf");
+    // src: url("../fonts/Nunito_Sans/NunitoSans-Bold.ttf");
+    // src: url("../fonts/droid-sans/DroidSans-Bold.ttf");
+    src: url("../fonts/Ubuntu/Ubuntu-Regular.ttf");
+}
+@font-face {
+	font-family: "FontFirstExtraBold";
+    // src: url("../fonts/Montserrat/Montserrat-ExtraBold.ttf");
+    // src: url("../fonts/Nunito_Sans/NunitoSans-ExtraBold.ttf");
+    src: url("../fonts/Ubuntu/Ubuntu-Bold.ttf");
+}
+@font-face {
+	font-family: "FontFirst2";
+    src: url("../fonts/Nunito_Sans/NunitoSans-Regular.ttf");
+}
+@font-face {
+	font-family: "FontFirst3";
+    src: url("../fonts/Quicksand/Quicksand-Regular.ttf");
+}
+
+//variable
+$col-full : 800px;
+$max-width : 800px;
+$std-width : 500px;
+$min-width : 300px;
+
+//radius
+$radius: 15px;
+$radius-2: 7.5px;
+$radius-3: 5px;
+
+//color
+$min-color : #394263;// #bd081c;
+$sek-color : #fff;
+$pos-color : #529ecc;
+$del-color : #9a0000;
+$err-color : #ff0000;
+$pri-color : #f3f3f3;
+$txt-84-color: rgb(68, 68, 68);
+$txt-54-color: rgb(136, 136, 136);;
+$txt-34-color: rgb(170, 174, 179);;
+$txt-min-color: rgba(0,0,0,0.84);
+$txt-sek-color: rgba(0,0,0,0.54);
+$txt-size-title: 22px;
+$txt-size-desc: 14px;
+$txt-size-desc: 14px;
+$txt-size-big: 32px;
+$txt-size-12px: 12px;
+$txt-size-14px: 14px;
+$txt-size-16px: 16px;
+$txt-size-18px: 18px;
+$txt-size-20px: 20px;
+
+// color
+$blue: #004c97;
+$blueBlack: #01386e;
+$red: #e74c3c;
+$orange: #f39c12;
+$green: #2ecc71;
+$teal: #1abc9c;
+$yellow: #f1c40f;
+$purple: #9b59b6;
+$purpleBlack: #8e44ad;
+$magenta: #e84393;
+
+$border: 1px #f3f3f3 solid;
+$border1: 1px rgba(0,0,0,0.1) solid;
+$border2: 1px rgba(0,0,0,0.2) solid;
+$no-border: 0 #fff solid;
+
+$shadow: 0 5px 30px rgba(154,161,171,.25);
+$shadow-small: 0 3px 10px rgba(154,161,171,.25);
+$shadow-line: 0 2px 10px rgba(0,0,0,0.14);
+
+// color
+.gradient-purple {
+    background: linear-gradient(to top, $purple 10%, $red 100%);
+    color: #fff;
+}
+.gradient-blue {
+    background: linear-gradient(to top, $blue 10%, $purple 100%);
+    color: #fff;
+}
+.gradient-red {
+    background: linear-gradient(to top, $red 10%, $magenta 100%);
+    color: #fff;
+}
+.gradient-orange {
+    background: linear-gradient(to top, $orange 10%, $magenta 100%);
+    color: #fff;
+}
+.background-white {
+    background-color: #fff !important;
+}
+.background-grey {
+    background-color: #fafbfe !important;
+}
+.background-dark-grey {
+    background-color: #f5f5f5 !important;
+}
+.background-blue {
+    background-color: $blue !important;
+    color: #fff !important;
+}
+.background-red {
+    background-color: $red !important;
+    color: #fff !important;
+}
+.background-green {
+    background-color: $green !important;
+    color: #fff !important;
+}
+.background-orange {
+    background-color: $orange !important;
+    color: #fff !important;
+}
+.background-purple {
+    background-color: $purple !important;
+    color: #fff !important;
+}
+.background-post {
+    background-color: $pos-color !important;
+    color: #fff !important;
+}
+.background-transaparant {
+    background-color: rgba(0,0,0,0) !important;
+}
+.background-transaparant-14 {
+    background-color: rgba(0,0,0,0.14) !important;
+}
+.background-transaparant-34 {
+    background-color: rgba(0,0,0,0.34) !important;
+}
+.background-transaparant-white {
+    background-color: rgba(225,225,225,0.34) !important;
+}
+
+.background-grey-hover {
+    &:hover {
+        -webkit-transition: 0.39;
+           -moz-transition: 0.39;
+            -ms-transition: 0.39;
+             -o-transition: 0.39;
+                transition: 0.39;
+        background-color: #f8f8f8;
+    }
+}
+
+.color-white {
+    color: #fff;
+}
+.color-black {
+    color: $txt-84-color;
+}
+.color-red {
+    color: $red;
+}
+.color-blue {
+    color: $blue;
+}
+.color-green {
+    color: $green;
+}
+.color-orange {
+    color: $orange;
+}
+.color-post {
+    color: $pos-color;
+}
+.color-grey {
+    color: rgba(0,0,0,0.14);
+}
+.color-dark-grey {
+    color: #999;
+}
+
+.border-radius {
+    border-radius: 5px;
+    // overflow: hidden;
+}
+.border-radius-2 {
+    border-radius: 5px;
+}
+.border {
+    $border: $border;
+}
+.shadow {
+    box-shadow: $shadow;
+}
+.shadow-small {
+    box-shadow: $shadow-small;
+}
+
+.content-center {
+    text-align: center;
+    justify: center;
+}
+
+// scrollbar
+@mixin transparantScrollBar() {
+    // normal
+    &::-moz-scrollbar {
+        width: 10px;
+        height: 10px;
+        background-color: rgba(0, 0, 0, 0);
+    }
+    &::-moz-scrollbar-thumb {
+        background-color: rgba(0,0,0,0.14);
+        -moz-border-radius: 1ex;
+    }
+    &::-moz-scrollbar-corner {
+        background-color: #fff;
+    }
+
+    // webkit
+    &::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+        background-color: rgba(0, 0, 0, 0);
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(0,0,0,0.14);
+        -webkit-border-radius: 1ex;
+    }
+    &::-webkit-scrollbar-corner {
+        background-color: #fff;
+    }
+}
+
+@mixin transparantScrollBarHover() {
+    
+    &::scrollbar {
+        width: 0;
+        background-color: rgba(0, 0, 0, 0);
+    }
+    &::scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0);
+        border-radius: 1ex;
+    }
+    &::scrollbar-corner {
+        background-color: #fff;
+    }
+
+    &::-webkit-scrollbar {
+        width: 0;
+        background-color: rgba(0, 0, 0, 0);
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0);
+        -webkit-border-radius: 1ex;
+    }
+    &::-webkit-scrollbar-corner {
+        background-color: #fff;
+    }
+
+    &::-moz-scrollbar {
+        width: 0;
+        background-color: rgba(0, 0, 0, 0);
+    }
+    &::-moz-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0);
+        -moz-border-radius: 1ex;
+    }
+    &::-moz-scrollbar-corner {
+        background-color: #fff;
+    }
+
+    &:hover {
+        &::scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        &::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        &::-moz-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            @include animate_1();
+            background-color: rgba(0,0,0,0.14);
+        }
+        &::-moz-scrollbar-thumb {
+            @include animate_1();
+            background-color: rgba(0,0,0,0.14);
+        }
+    }
+}
+
+@mixin greyScrollBar() {
+    &::scrollbar {
+        width: 10px;
+        height: 10px;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    &::scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 1ex;
+    }
+    &::scrollbar-corner {
+        background-color: #fff;
+    }
+
+    &::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.1);
+        -webkit-border-radius: 1ex;
+    }
+    &::-webkit-scrollbar-corner {
+        background-color: #fff;
+    }
+
+    &::-moz-scrollbar {
+        width: 10px;
+        height: 10px;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    &::-moz-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.1);
+        -webkit-border-radius: 1ex;
+    }
+    &::-moz-scrollbar-corner {
+        background-color: #fff;
+    }
+}
+
+.change-scrollbar {
+    @include transparantScrollBarHover();
+    scroll-behavior: smooth;
+}

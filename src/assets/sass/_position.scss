@@ -1,0 +1,121 @@
+//method
+@mixin rgba_black($val, $col) {
+	background-color: rgba(0,0,0,$val);
+	color: $col;
+}
+//position
+@mixin post_none() {
+	position: relative;
+	top: 0;
+	left: 0;
+	-webkit-transform: translate(0, 0);
+	   -moz-transform: translate(0, 0);
+		    -ms-transform: translate(0, 0);
+		     -o-transform: translate(0, 0);
+		        transform: translate(0, 0);
+}
+@mixin post_fixed() {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: $txt-sek-color;
+	z-index: 300;
+}
+@mixin post_top($path) {
+	position: $path;
+    top: 50%;
+    left: 0;
+	-webkit-transform: translate(0, -50%);
+	   -moz-transform: translate(0, -50%);
+		    -ms-transform: translate(0, -50%);
+		     -o-transform: translate(0, -50%);
+		        transform: translate(0, -50%);
+}
+@mixin post_bottom($path) {
+	position: $path;
+    bottom: 0;
+    left: 50%;
+	-webkit-transform: translate(-50%, 0);
+	   -moz-transform: translate(-50%, 0);
+		    -ms-transform: translate(-50%, 0);
+		     -o-transform: translate(-50%, 0);
+		        transform: translate(-50%, 0);
+}
+@mixin post_middle($path) {
+	position: $path;
+    top: 0;
+    left: 50%;
+	-webkit-transform: translate(-50%, 0);
+	   -moz-transform: translate(-50%, 0);
+		    -ms-transform: translate(-50%, 0);
+		     -o-transform: translate(-50%, 0);
+		        transform: translate(-50%, 0);
+}
+@mixin post_center($path) {
+    position: $path;
+    top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	   -moz-transform: translate(-50%, -50%);
+		    -ms-transform: translate(-50%, -50%);
+		     -o-transform: translate(-50%, -50%);
+		        transform: translate(-50%, -50%);
+}
+
+.post-middle {
+	@include post_center(relative);
+}
+.post-middle-absolute {
+	@include post_center(absolute);
+}
+
+.post-center {
+	@include post_top(relative);
+}
+
+.post-top {
+	@include post_top(relative);
+}
+
+.display-flex {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;	
+	.df-card {
+		flex: 1 1 calc(33.33% - 1em);
+		margin: .55rem .25em;
+	}
+	@media (max-width: $max-width) {
+		.df-card {
+			flex: 1 1 calc(100% - 1em);
+		}
+	}
+}
+
+.display-flex-normal {
+	position: relative;
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.display-flex-mobile {
+	position: relative;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	justify-content: space-between;
+	@media (max-width: $max-width) {
+		display: block;
+	}
+}
+
+.display-flex-column {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: space-between;
+}
